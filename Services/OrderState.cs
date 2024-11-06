@@ -18,19 +18,21 @@ public class OrderState
 
         ShowingConfigureDialog = true;
     }
-
     public void CancelConfigurePizzaDialog()
     {
         ConfiguringPizza = null;
 
         ShowingConfigureDialog = false;
     }
-
     public void ConfirmConfigurePizzaDialog()
     {
         Order.Pizzas.Add(ConfiguringPizza);
         ConfiguringPizza = null;
 
         ShowingConfigureDialog = false;
+    }
+    public void RemoveConfiguredPizza(Pizza pizza)
+    {
+        Order.Pizzas.Remove(pizza);
     }
 }
